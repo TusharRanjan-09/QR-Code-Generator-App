@@ -28,11 +28,15 @@ export default class Index extends Component {
                 <TouchableOpacity onPress={this.getTextInputValue} activeOpacity={0.7} style={styles.button} >
                     <Text style={styles.TextStyle}> Click Here To Generate QR Code </Text>
                 </TouchableOpacity>
-                <QRCode
+                <View style={{marginTop:55}}>
+                <QRCode        
                     value={this.state.Text_Holder_2}
-                    size={250}
-                    bgColor='#000'
-                    fgColor='#fff' />
+                    size={280}
+                    // bgColor='#000'
+                    // fgColor='#fff' 
+                    />
+                </View>
+                
                 </View>
                
             </View>
@@ -41,17 +45,14 @@ export default class Index extends Component {
 }
 const styles = StyleSheet.create({
     MainContainer: {
-        flex: 1,
-        // margin: 10,
-        // alignItems: 'center',
-       
+        flex: 1,     
     },
     TextInputStyle: {
         width: '100%',
         height: 40,
         borderRadius: 10,
         marginBottom: 10,
-        borderWidth: 1,
+        borderWidth: 3,
         borderColor: '#F44336',
         textAlign: 'center'
     },
