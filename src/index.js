@@ -32,11 +32,8 @@ export default class Index extends Component {
                 <QRCode        
                     value={this.state.Text_Holder_2}
                     size={280}
-                    // bgColor='#000'
-                    // fgColor='#fff' 
                     />
-                </View>
-                
+                </View>             
                 </View>
                
             </View>
