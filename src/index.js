@@ -1,84 +1,66 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState,useEffect, Component} from 'react';
-import { StyleSheet, View ,TextInput, TouchableOpacity, Text,} from 'react-native';
+import React, { useState, useEffect, Component } from 'react';
+import { StyleSheet, View, TextInput, TouchableOpacity, Text, } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 export default class Index extends Component {
-    constructor(){
-        super();   
-        this.state={   
-          Text_Holder_1 : '',    
-          Text_Holder_2 : 'Hello'  
-        }   
-      }    
-      getTextInputValue=()=>{   
-        this.setState({Text_Holder_2 : this.state.Text_Holder_1});   
-      }
+    constructor() {
+        super();
+        this.state = {
+            Text_Holder_1: '',
+            Text_Holder_2: 'Hello'
+        }
+    }
+    getTextInputValue = () => {
+        this.setState({ Text_Holder_2: this.state.Text_Holder_1 });
+    }
     render() {
-        return(
+        return (
             <View style={styles.MainContainer}>
- 
- 
-            <TextInput
-              style={styles.TextInputStyle}
-              onChangeText={(text) => this.setState({Text_Holder_1: text})}
-              underlineColorAndroid = "transparent" 
-              placeholder="Enter URL to Generate QR Code"
-            />
-     
-            <TouchableOpacity onPress={this.getTextInputValue} activeOpacity={0.7} style={styles.button} >
-            
-            <Text style={styles.TextStyle}> Click Here To Generate QR Code </Text>
-     
-            </TouchableOpacity>
-     
-            <QRCode
-              value={this.state.Text_Holder_2}
-              size={250}
-              bgColor='#000'
-              fgColor='#fff'/>
-     
-     
-          </View>
+                <TextInput
+                    style={styles.TextInputStyle}
+                    onChangeText={(text) => this.setState({ Text_Holder_1: text })}
+                    underlineColorAndroid="transparent"
+                    placeholder="Enter URL to Generate QR Code"
+                />
+                <TouchableOpacity onPress={this.getTextInputValue} activeOpacity={0.7} style={styles.button} >
+                    <Text style={styles.TextStyle}> Click Here To Generate QR Code </Text>
+                </TouchableOpacity>
+                <QRCode
+                    value={this.state.Text_Holder_2}
+                    size={250}
+                    bgColor='#000'
+                    fgColor='#fff' />
+            </View>
         )
     }
 }
 const styles = StyleSheet.create({
- 
     MainContainer: {
-   
-      flex: 1,
-      margin: 10,
-      alignItems: 'center',
-      paddingTop:  20 
-    
+        flex: 1,
+        margin: 10,
+        alignItems: 'center',
+        paddingTop: 20
     },
-   
     TextInputStyle: {
-   
-      width: '100%',
-      height: 40,
-      borderRadius: 10,
-      marginBottom: 10,
-      borderWidth: 1,
-      borderColor: '#F44336',
-      textAlign: 'center'
-      
+        width: '100%',
+        height: 40,
+        borderRadius: 10,
+        marginBottom: 10,
+        borderWidth: 1,
+        borderColor: '#F44336',
+        textAlign: 'center'
     },
-   
     button: {
-      
-      width: '100%',
-      paddingTop:8,
-      paddingBottom:8,
-      backgroundColor: '#009688',
-      borderRadius:7,
-      marginBottom: 20
+        width: '100%',
+        paddingTop: 8,
+        paddingBottom: 8,
+        backgroundColor: '#009688',
+        borderRadius: 7,
+        marginBottom: 20
     },
-   
-    TextStyle:{
-      color:'#fff',
-      textAlign:'center',
-      fontSize: 18
-  }
-    
-  });
+    TextStyle: {
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 18
+    }
+});
