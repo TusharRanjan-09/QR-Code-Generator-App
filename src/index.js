@@ -7,12 +7,12 @@ export default class Index extends Component {
     constructor() {
         super();
         this.state = {
-            Text_Holder_1: '',
-            Text_Holder_2: 'Hello'
+            TextHolder1: '',
+            TextHolder2: 'Hello'
         }
     }
     getTextInputValue = () => {
-        this.setState({ Text_Holder_2: this.state.Text_Holder_1 });
+        this.setState({ TextHolder2: this.state.TextHolder1 });
     }
     render() {
         return (
@@ -21,7 +21,7 @@ export default class Index extends Component {
                 <View style={{alignItems: 'center', paddingHorizontal:35}}>
                 <TextInput
                     style={styles.TextInputStyle}
-                    onChangeText={(text) => this.setState({ Text_Holder_1: text })}
+                    onChangeText={(text) => this.setState({ TextHolder1: text })}
                     underlineColorAndroid="transparent"
                     placeholder="Enter URL to Generate QR Code"
                 />
@@ -30,7 +30,7 @@ export default class Index extends Component {
                 </TouchableOpacity>
                 <View style={{marginTop:55}}>
                 <QRCode        
-                    value={this.state.Text_Holder_2}
+                    value={this.state.TextHolder2}
                     size={280}
                     />
                 </View>             
