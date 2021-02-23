@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect, Component } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text, } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
+import Header from './components/Hearder';
 export default class Index extends Component {
     constructor() {
         super();
@@ -16,6 +17,8 @@ export default class Index extends Component {
     render() {
         return (
             <View style={styles.MainContainer}>
+                <Header/>
+                <View style={{alignItems: 'center', paddingHorizontal:35}}>
                 <TextInput
                     style={styles.TextInputStyle}
                     onChangeText={(text) => this.setState({ Text_Holder_1: text })}
@@ -30,6 +33,8 @@ export default class Index extends Component {
                     size={250}
                     bgColor='#000'
                     fgColor='#fff' />
+                </View>
+               
             </View>
         )
     }
@@ -37,9 +42,9 @@ export default class Index extends Component {
 const styles = StyleSheet.create({
     MainContainer: {
         flex: 1,
-        margin: 10,
-        alignItems: 'center',
-        paddingTop: 20
+        // margin: 10,
+        // alignItems: 'center',
+       
     },
     TextInputStyle: {
         width: '100%',
