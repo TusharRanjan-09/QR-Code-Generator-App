@@ -28,7 +28,7 @@ export default class Index extends Component {
                 <TouchableOpacity onPress={this.getTextInputValue} activeOpacity={0.7} style={styles.button} >
                     <Text style={styles.TextStyle}> Click Here To Generate QR Code </Text>
                 </TouchableOpacity>
-                <View style={{marginTop:55}}>
+                <View style={{marginTop:45}}>
                 <QRCode        
                     value={this.state.TextHolder2}
                     size={280}
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 40,
         borderRadius: 10,
-        marginBottom: 10,
+        marginBottom: 20,
         borderWidth: 3,
         borderColor: '#F44336',
         textAlign: 'center'
