@@ -34,8 +34,7 @@ export default class Index extends Component {
                     size={280}
                     />
                 </View>             
-                </View>
-               
+                </View>              
             </View>
         )
     }
